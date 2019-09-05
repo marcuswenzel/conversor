@@ -60,7 +60,7 @@
       <Name>Planet.Converter.Currency.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Planet.Converter.Currency.Service\Planet.Converter.Currency.Service.csproj">
-      <Project>{de2b59a1-8458-4eca-8e93-c2b678244e25}</Project>
+      <Project>{957d0f19-c835-4255-b765-77b3913dc2c5}</Project>
       <Name>Planet.Converter.Currency.Service</Name>
     </ProjectReference>
   </ItemGroup>

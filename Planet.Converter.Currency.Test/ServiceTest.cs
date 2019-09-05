@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Planet.Converter.Currency.Service;
 using Planet.Converter.Currency.Service.Externals.API;
 
@@ -9,23 +8,12 @@ namespace Planet.Converter.Currency.Test
     public class ServiceTest
     {
         [TestMethod]
-        public void GetAllConversionFromEuro()
+        public void GetRateValueBaseOnEuroToBRL()
         {
             // DEPENDENCY INJECTION (Constructor Injection)
             CurrencyService service = new CurrencyService(new DataFixerIOAPIService());
 
-            var ratesEUR = service.GetAllConversionFromCurrency("EUR");
-
-            Assert.IsNotNull(ratesEUR);
-        }
-
-        [TestMethod]
-        public void GetBRLValueBaseOnEuro()
-        {
-            // DEPENDENCY INJECTION (Constructor Injection)
-            CurrencyService service = new CurrencyService(new DataFixerIOAPIService());
-
-            var ratesEURToBRL = service.ConvertCurrency("EUR", "BRL");
+            var ratesEURToBRL = service.ConvertCurrencyBaseOnEURO("BRL");
 
             Assert.IsTrue(ratesEURToBRL > 0);
         }
@@ -33,6 +21,8 @@ namespace Planet.Converter.Currency.Test
         [TestMethod]
         public void CurrencyConversionEUR_to_USD()
         {
+            // Get a rate for EUR to USD
+
             // DEPENDENCY INJECTION (Constructor Injection)
             CurrencyService service = new CurrencyService(new DataFixerIOAPIService());
 
@@ -42,41 +32,27 @@ namespace Planet.Converter.Currency.Test
         }
 
         [TestMethod]
-        public void CurrencyConversionGBP_to_USD()
+        public void GetRateValueBaseOnEuroToGBP()
         {
+            // Get a rate for EUR to GBP
+
             // DEPENDENCY INJECTION (Constructor Injection)
             CurrencyService service = new CurrencyService(new DataFixerIOAPIService());
 
-            // I culd't use the attribute in URL "&base=GBP", so I calculate based on EUR
+            var ratesEURToGBP = service.ConvertCurrencyBaseOnEURO("GBP");
 
-            // Get all rates base on EURO
-            var ratesEUR = service.GetAllConversionFromCurrency("EUR");
+            Assert.IsTrue(ratesEURToGBP > 0);
+        }
 
-            // Get rate from GBP base on EURO
-            var rateEURToGBP = ratesEUR.Rates.Find(x => x.CurrencyConversion.Equals("GBP"));
-            Assert.IsNotNull(rateEURToGBP);
-            Assert.IsTrue(rateEURToGBP.Value > 0);
+        [TestMethod]
+        public void CurrencyConversionGBP_to_USD()
+        {
+            // Get a rate for GBP to USD
 
-            // Get rate from USD base on EURO
-            var rateEURToUSD = ratesEUR.Rates.Find(x => x.CurrencyConversion.Equals("USD"));
-            Assert.IsNotNull(rateEURToUSD);
-            Assert.IsTrue(rateEURToUSD.Value > 0);
+            // DEPENDENCY INJECTION (Constructor Injection)
+            CurrencyService service = new CurrencyService(new DataFixerIOAPIService());
 
-            /*
-                Calculation:
-
-                1 EUR = 0,90 GBP
-                1 EUR = 1,11 USD
-
-                1 EUR = 0,90 GBP = 1,11 USD
-
-                0,90 GBP = 1,11 USD
-                1 GBP    = X USD 
-
-                1 GBP = 1,23 USD
-            */
-
-            var rateGBPToUSD = Math.Round(rateEURToUSD.Value / rateEURToGBP.Value, 5);
+            var rateGBPToUSD = service.ConvertCurrency("GBP", "USD");
 
             Assert.IsTrue(rateGBPToUSD > 0);
         }

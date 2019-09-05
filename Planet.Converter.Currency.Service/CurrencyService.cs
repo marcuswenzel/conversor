@@ -20,5 +20,10 @@ namespace Planet.Converter.Currency.Service
         {
             return this.Service.ConvertCurrency(baseCurrency, currencyConversion);
         }
+
+        public float ConvertCurrencyBaseOnEURO(string currencyConversion)
+        {
+            return this.Service.ConvertCurrencyBaseOnEURO(currencyConversion);
+        }
     }
 }

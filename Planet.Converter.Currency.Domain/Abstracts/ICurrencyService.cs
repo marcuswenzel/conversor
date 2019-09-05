@@ -5,6 +5,8 @@ namespace Planet.Converter.Currency.Domain.Abstracts
     {
         Entities.Currency GetAllConversionFromCurrency(string baseCurrency);
 
+        float ConvertCurrencyBaseOnEURO(string currencyConversion);
+
         float ConvertCurrency(string baseCurrency, string currencyConversion);
     }
 }

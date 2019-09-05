@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planet.Converter.Currency.Service", "Planet.Converter.Currency.Service\Planet.Converter.Currency.Service.csproj", "{DE2B59A1-8458-4ECA-8E93-C2B678244E25}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Currency", "Currency", "{89A77DA5-7822-49F6-A4E1-530F323B41D5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F56F3B48-3040-4853-98A7-CFEF01C12D89}"
@@ -17,16 +15,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7CA3E47F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planet.Converter.Currency.Test", "Planet.Converter.Currency.Test\Planet.Converter.Currency.Test.csproj", "{8761A594-B513-4492-A7DE-C130E5C5490C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planet.Converter.Currency.Service", "Planet.Converter.Currency.Service\Planet.Converter.Currency.Service.csproj", "{957D0F19-C835-4255-B765-77B3913DC2C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{B2540535-6C67-42EE-8ED9-B1FD8C17C252}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planet.Converter.UI.ConsoleApplication", "Planet.Converter.UI.ConsoleApplication\Planet.Converter.UI.ConsoleApplication.csproj", "{BC506BD4-8C16-4A6E-971A-0DD6EB1FA64A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DE2B59A1-8458-4ECA-8E93-C2B678244E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE2B59A1-8458-4ECA-8E93-C2B678244E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE2B59A1-8458-4ECA-8E93-C2B678244E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE2B59A1-8458-4ECA-8E93-C2B678244E25}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E8E2414A-EF7B-4FE7-B06E-3A66F3A05F7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E8E2414A-EF7B-4FE7-B06E-3A66F3A05F7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8E2414A-EF7B-4FE7-B06E-3A66F3A05F7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,16 +35,25 @@ Global
 		{8761A594-B513-4492-A7DE-C130E5C5490C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8761A594-B513-4492-A7DE-C130E5C5490C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8761A594-B513-4492-A7DE-C130E5C5490C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{957D0F19-C835-4255-B765-77B3913DC2C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{957D0F19-C835-4255-B765-77B3913DC2C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{957D0F19-C835-4255-B765-77B3913DC2C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{957D0F19-C835-4255-B765-77B3913DC2C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC506BD4-8C16-4A6E-971A-0DD6EB1FA64A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC506BD4-8C16-4A6E-971A-0DD6EB1FA64A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC506BD4-8C16-4A6E-971A-0DD6EB1FA64A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC506BD4-8C16-4A6E-971A-0DD6EB1FA64A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{DE2B59A1-8458-4ECA-8E93-C2B678244E25} = {F56F3B48-3040-4853-98A7-CFEF01C12D89}
 		{F56F3B48-3040-4853-98A7-CFEF01C12D89} = {89A77DA5-7822-49F6-A4E1-530F323B41D5}
 		{AAC32E4B-B3E7-47C9-98CC-74AD1C95447E} = {89A77DA5-7822-49F6-A4E1-530F323B41D5}
 		{E8E2414A-EF7B-4FE7-B06E-3A66F3A05F7C} = {AAC32E4B-B3E7-47C9-98CC-74AD1C95447E}
 		{8761A594-B513-4492-A7DE-C130E5C5490C} = {7CA3E47F-3A0D-4799-99E3-E1B63015DB62}
+		{957D0F19-C835-4255-B765-77B3913DC2C5} = {F56F3B48-3040-4853-98A7-CFEF01C12D89}
+		{BC506BD4-8C16-4A6E-971A-0DD6EB1FA64A} = {B2540535-6C67-42EE-8ED9-B1FD8C17C252}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C3328D3D-DBA0-4AAE-963B-6BB10BDF017F}
